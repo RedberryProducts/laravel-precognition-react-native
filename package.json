@@ -1,0 +1,17 @@
+{
+  "name": "@redberry/laravel-precognition-react-native",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "author": "rippera.san",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3"
+  }
+}
