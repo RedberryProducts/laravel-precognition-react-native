@@ -26,8 +26,7 @@
   ],
   "scripts": {
     "build": "rm -rf dist && tsup",
-    "prepublishOnly": "npm run build",
-    "version": "npm pkg set dependencies.laravel-precognition=$npm_package_version"
+    "prepublishOnly": "npm run build"
   },
   "engines": {
     "node": ">=14"
