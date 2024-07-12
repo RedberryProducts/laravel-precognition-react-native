@@ -1,17 +1,47 @@
 {
-  "name": "@redberry/laravel-precognition-react-native",
+  "name": "laravel-precognition-react-native",
   "version": "0.0.1",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "build": "tsup"
+  "description": "Laravel Precognition (React Native).",
+  "keywords": [
+    "laravel",
+    "precognition",
+    "React Native",
+    "RN"
+  ],
+  "homepage": "https://github.com/RedberryProducts/laravel-precognition-react-native",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RedberryProducts/laravel-precognition-react-native"
   },
-  "author": "rippera.san",
   "license": "MIT",
-  "description": "",
+  "author": {
+    "name": "Mikheil Mezurnishvili",
+    "email": "mikheil.mez@gmail.com",
+    "url": "https://github.com/rippera"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsup",
+    "prepublishOnly": "npm run build",
+    "version": "npm pkg set dependencies.laravel-precognition=$npm_package_version"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-native": "^0.74.x"
+  },
+  "dependencies": {
+  },
   "devDependencies": {
     "tsup": "^8.1.0",
+    "@types/react": "^18.2.6",
+    "react-native": "^0.74.3",
     "typescript": "^5.5.3"
   }
 }

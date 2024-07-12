@@ -1,6 +1,5 @@
 .DS_Store
 /node_modules
+/dist
 /.idea
-tsconfig.json
-tsup.config.ts
 yarn.lock
