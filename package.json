@@ -1,6 +1,6 @@
 {
-  "name": "laravel-precognition-react-native",
-  "version": "0.0.1",
+  "name": "@rayredberry/laravel-precognition-react-native",
+  "version": "0.1.0",
   "description": "Laravel Precognition (React Native).",
   "keywords": [
     "laravel",
