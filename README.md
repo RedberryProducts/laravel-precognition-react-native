@@ -58,16 +58,16 @@ const {} = usePrecognition<{
 
 ### Value Table
 
-| Returned Values |                                   Types                                    |
-| --------------- | :------------------------------------------------------------------------: |
-| submit          |          (values: T) => Promise<ResponseReturType \| undefined>;           |
-| validateValues  | (vals: Partial<Record<keyof T, any>>, fieldName?: string) => Promise<void> |
-| errors          |                                 T \| null                                  |
-| setErrors       |              React.Dispatch<React.SetStateAction<T \| null>>               |
-| setDisabled     |               React.Dispatch<React.SetStateAction<boolean>>                |
-| disabled        |                                  boolean                                   |
-| touched         |                                 T \| null                                  |
-| loading         |                                  boolean                                   |
+| Returned Values |                                   Types                                    |                             Description                             |
+| --------------- | :------------------------------------------------------------------------: | :-----------------------------------------------------------------: |
+| submit          |          (values: T) => Promise<ResponseReturType \| undefined>;           |                             form values                             |
+| validateValues  | (vals: Partial<Record<keyof T, any>>, fieldName?: string) => Promise<void> | vals is form values, fieldName is string to catch touched textinput |
+| errors          |                                 T \| null                                  |                                                                     |
+| setErrors       |              React.Dispatch<React.SetStateAction<T \| null>>               |                                                                     |
+| setDisabled     |               React.Dispatch<React.SetStateAction<boolean>>                |                                                                     |
+| disabled        |                                  boolean                                   |                                                                     |
+| touched         |                                 T \| null                                  |                                                                     |
+| loading         |                                  boolean                                   |                                                                     |
 
 ### Sample Form usage
 
