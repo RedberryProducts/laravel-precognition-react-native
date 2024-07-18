@@ -1,0 +1,9 @@
+version: 2
+
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    # Only open pull requests for security updates...
+    open-pull-requests-limit: 0
