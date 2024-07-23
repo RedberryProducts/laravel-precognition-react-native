@@ -34,16 +34,28 @@
     "engines": {
         "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
     },
+    "prettier": {
+        "arrowParens": "always",
+        "bracketSameLine": true,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "tabWidth": 2,
+        "printWidth": 80,
+        "semi": true,
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false
+    },
     "peerDependencies": {
         "react": "^18.0.0",
         "react-native": "^0.74.x"
     },
-    "dependencies": {},
     "devDependencies": {
         "@eslint/js": "^9.7.0",
+        "@react-native/typescript-config": "^0.74.85",
         "@types/react": "^18.2.6",
         "eslint": "9.x",
         "globals": "^15.8.0",
+        "prettier": "3.3.3",
         "react-native": "^0.74.3",
         "tsup": "^8.1.0",
         "typescript": "^5.5.3",

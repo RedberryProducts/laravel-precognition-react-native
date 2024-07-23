@@ -27,7 +27,7 @@ export const PrecognitionContext = React.createContext<PrecognitionConfigType>({
   },
 });
 
-const PrecognitionWrapper: React.FC<PrecognitionProviderProps> = props => {
+const PrecognitionWrapper: React.FC<PrecognitionProviderProps> = (props) => {
   return (
     <PrecognitionContext.Provider
       value={{

@@ -1,18 +1,26 @@
-import {View, StyleSheet, TextInput, Text, Button, Switch} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  TextInput,
+  Text,
+  Button,
+  Switch,
+} from 'react-native';
 import React from 'react';
 import usePrecognition from '../hooks/usePrecognition';
 
 const SomeForm = () => {
-  const {validateValues, errors, touched, submit, disabled} = usePrecognition<{
-    first_name: string;
-    last_name: string;
-    tin: string;
-    password: string;
-    consent_term: boolean;
-  }>({
-    method: 'POST',
-    endpoint: 'register',
-  });
+  const { validateValues, errors, touched, submit, disabled } =
+    usePrecognition<{
+      first_name: string;
+      last_name: string;
+      tin: string;
+      password: string;
+      consent_term: boolean;
+    }>({
+      method: 'POST',
+      endpoint: 'register',
+    });
 
   const [values, setValues] = React.useState<{
     first_name: string;
@@ -31,7 +39,7 @@ const SomeForm = () => {
   });
 
   const handleChange = (val: any, key: string) => {
-    setValues(prev => ({
+    setValues((prev) => ({
       ...prev,
       [key]: val,
     }));
@@ -45,7 +53,7 @@ const SomeForm = () => {
           placeholder="first_name"
           placeholderTextColor={'#000000'}
           value={values.first_name}
-          onChangeText={text => handleChange(text, 'first_name')}
+          onChangeText={(text) => handleChange(text, 'first_name')}
           onBlur={() =>
             validateValues(
               {
@@ -57,7 +65,9 @@ const SomeForm = () => {
           }
         />
         {errors?.first_name && touched?.first_name && (
-          <Text style={{color: 'red', fontSize: 18}}>{errors?.first_name}</Text>
+          <Text style={{ color: 'red', fontSize: 18 }}>
+            {errors?.first_name}
+          </Text>
         )}
       </View>
       <View>
@@ -66,7 +76,7 @@ const SomeForm = () => {
           placeholder="last_name"
           placeholderTextColor={'#000000'}
           value={values.last_name}
-          onChangeText={text => handleChange(text, 'last_name')}
+          onChangeText={(text) => handleChange(text, 'last_name')}
           onBlur={() =>
             validateValues(
               {
@@ -78,7 +88,9 @@ const SomeForm = () => {
           }
         />
         {errors?.last_name && touched?.last_name && (
-          <Text style={{color: 'red', fontSize: 18}}>{errors?.last_name}</Text>
+          <Text style={{ color: 'red', fontSize: 18 }}>
+            {errors?.last_name}
+          </Text>
         )}
       </View>
       <View>
@@ -87,7 +99,7 @@ const SomeForm = () => {
           placeholder="tin"
           placeholderTextColor={'#000000'}
           value={values.tin}
-          onChangeText={text => handleChange(text, 'tin')}
+          onChangeText={(text) => handleChange(text, 'tin')}
           onBlur={() =>
             validateValues(
               {
@@ -99,7 +111,7 @@ const SomeForm = () => {
           }
         />
         {errors?.tin && touched?.tin && (
-          <Text style={{color: 'red', fontSize: 18}}>{errors?.tin}</Text>
+          <Text style={{ color: 'red', fontSize: 18 }}>{errors?.tin}</Text>
         )}
       </View>
       <View>
@@ -108,7 +120,7 @@ const SomeForm = () => {
           placeholder="password"
           placeholderTextColor={'#000000'}
           value={values.password}
-          onChangeText={text => handleChange(text, 'password')}
+          onChangeText={(text) => handleChange(text, 'password')}
           onBlur={() =>
             validateValues(
               {
@@ -120,7 +132,7 @@ const SomeForm = () => {
           }
         />
         {errors?.password && touched?.password && (
-          <Text style={{color: 'red', fontSize: 18}}>{errors?.password}</Text>
+          <Text style={{ color: 'red', fontSize: 18 }}>{errors?.password}</Text>
         )}
       </View>
       <View>
@@ -129,7 +141,7 @@ const SomeForm = () => {
           placeholder="password"
           placeholderTextColor={'#000000'}
           value={values.password_confirmation}
-          onChangeText={text => handleChange(text, 'password_confirmation')}
+          onChangeText={(text) => handleChange(text, 'password_confirmation')}
           onBlur={() =>
             validateValues(
               {
@@ -141,13 +153,13 @@ const SomeForm = () => {
           }
         />
         {errors?.password && touched?.password && (
-          <Text style={{color: 'red', fontSize: 18}}>{errors?.password}</Text>
+          <Text style={{ color: 'red', fontSize: 18 }}>{errors?.password}</Text>
         )}
       </View>
       <View>
         <Switch
           value={values.consent_term}
-          onValueChange={val => {
+          onValueChange={(val) => {
             handleChange(val, 'consent_term');
             validateValues(
               {
@@ -168,7 +180,7 @@ const SomeForm = () => {
           // }
         />
         {errors?.consent_term && touched?.consent_term && (
-          <Text style={{color: 'red', fontSize: 18}}>
+          <Text style={{ color: 'red', fontSize: 18 }}>
             {errors?.consent_term}
           </Text>
         )}
