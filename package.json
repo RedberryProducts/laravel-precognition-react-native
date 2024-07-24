@@ -1,69 +1,70 @@
 {
-    "name": "@rayredberry/laravel-precognition-react-native",
-    "version": "0.1.1",
-    "description": "Laravel Precognition (React Native).",
-    "keywords": [
-        "laravel",
-        "precognition",
-        "React Native",
-        "RN"
-    ],
-    "homepage": "https://github.com/RedberryProducts/laravel-precognition-react-native",
-    "type": "module",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/RedberryProducts/laravel-precognition-react-native"
-    },
-    "license": "MIT",
-    "author": {
-        "name": "Mikheil Mezurnishvili",
-        "email": "mikheil.mez@gmail.com",
-        "url": "https://github.com/rippera"
-    },
-    "main": "./dist/index.js",
-    "files": [
-        "/dist"
-    ],
-    "scripts": {
-        "build": "rm -rf dist && tsup",
-        "prepublishOnly": "npm run build",
-        "link": "npm link",
-        "lint": "eslint --ignore-pattern dist ./src",
-        "lint:fix": "eslint --fix --ext .ts --ignore-pattern dist ./src"
-    },
-    "engines": {
-        "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
-    },
-    "prettier": {
-        "arrowParens": "always",
-        "bracketSameLine": true,
-        "singleQuote": true,
-        "trailingComma": "all",
-        "tabWidth": 2,
-        "printWidth": 80,
-        "semi": true,
-        "bracketSpacing": true,
-        "jsxBracketSameLine": false
-    },
-    "peerDependencies": {
-        "react": "^18.0.0",
-        "react-native": "^0.74.x"
-    },
-    "devDependencies": {
-        "@eslint/js": "^9.7.0",
-        "@react-native/typescript-config": "^0.74.85",
-        "@types/react": "^18.2.6",
-        "eslint": "9.x",
-        "globals": "^15.8.0",
-        "prettier": "3.3.3",
-        "react-native": "^0.74.3",
-        "tsup": "^8.1.0",
-        "typescript": "^5.5.3",
-        "typescript-eslint": "^7.16.1"
-    },
-    "resolutions": {
-        "strip-ansi": "6.0.1",
-        "string-width": "4.2.2",
-        "wrap-ansi": "7.0.0"
-    }
+  "name": "@rayredberry/laravel-precognition-react-native",
+  "version": "0.1.1",
+  "description": "Laravel Precognition (React Native).",
+  "keywords": [
+    "laravel",
+    "precognition",
+    "React Native",
+    "RN"
+  ],
+  "homepage": "https://github.com/RedberryProducts/laravel-precognition-react-native",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RedberryProducts/laravel-precognition-react-native"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mikheil Mezurnishvili",
+    "email": "mikheil.mez@gmail.com",
+    "url": "https://github.com/rippera"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsup",
+    "prepublishOnly": "npm run build",
+    "link": "npm link",
+    "lint": "eslint --ignore-pattern dist ./src",
+    "lint:fix": "eslint --fix --ext .ts --ignore-pattern dist ./src"
+  },
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSameLine": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "printWidth": 80,
+    "semi": true,
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-native": "^0.74.x"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "@react-native/typescript-config": "^0.74.85",
+    "@types/react": "^18.2.6",
+    "eslint": "9.x",
+    "globals": "^15.8.0",
+    "prettier": "3.3.3",
+    "react-native": "^0.74.3",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.16.1"
+  },
+  "resolutions": {
+    "strip-ansi": "6.0.1",
+    "string-width": "4.2.2",
+    "wrap-ansi": "7.0.0"
+  }
 }

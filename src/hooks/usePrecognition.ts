@@ -1,22 +1,11 @@
 import React from 'react';
 import { PrecognitionContext } from '../PrecognitionContext';
-
-type RequestMethodTypes = 'PUT' | 'PATCH' | 'POST' | 'DELETE' | 'GET';
-
-type ResponseReturType = {
-  message: any;
-  data: any;
-};
-
-export type Precognition = {
-  precognition: boolean;
-  validate_name: string | null;
-};
-type Props = {
-  endpoint: string;
-  method: RequestMethodTypes;
-  config?: {};
-};
+import {
+  Precognition,
+  PrecognitionReturnType,
+  Props,
+  ResponseReturType,
+} from '../types';
 
 const usePrecognition = <T>(props: Props): PrecognitionReturnType<T> => {
   const { config } = React.useContext(PrecognitionContext);
@@ -177,20 +166,6 @@ const usePrecognition = <T>(props: Props): PrecognitionReturnType<T> => {
     setDisabled,
     loading,
   };
-};
-
-type PrecognitionReturnType<T> = {
-  submit: (values: T) => Promise<ResponseReturType | undefined>;
-  validateValues: (
-    vals: Partial<Record<keyof T, any>>,
-    fieldName?: string,
-  ) => Promise<void>;
-  errors: T | null;
-  setErrors: React.Dispatch<React.SetStateAction<T | null>>;
-  setDisabled: React.Dispatch<React.SetStateAction<boolean>>;
-  disabled: boolean;
-  touched: T | null;
-  loading: boolean;
 };
 
 export default usePrecognition;
