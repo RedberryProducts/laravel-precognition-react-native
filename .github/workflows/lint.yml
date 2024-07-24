@@ -6,8 +6,10 @@ on:
       - main
       - '*.x'
   pull_request:
-  schedule:
-    - cron: '0 0 * * *'
+    branches: main
+    types:
+      - opened
+      - synchronize
 
 jobs:
   lint:
