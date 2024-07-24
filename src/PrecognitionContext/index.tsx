@@ -1,17 +1,9 @@
 import React from 'react';
-
-type PrecognitionProviderProps = {
-  children: React.ReactNode;
-};
-
-export type PrecognitionConfig = {
-  url: string | null;
-  headers?: any;
-};
-
-export type PrecognitionConfigType = {
-  config: PrecognitionConfig;
-};
+import {
+  PrecognitionConfig,
+  PrecognitionConfigType,
+  PrecognitionProviderProps,
+} from '../types';
 
 let data: PrecognitionConfig | null = null;
 
@@ -27,7 +19,7 @@ export const PrecognitionContext = React.createContext<PrecognitionConfigType>({
   },
 });
 
-const PrecognitionWrapper: React.FC<PrecognitionProviderProps> = props => {
+const PrecognitionWrapper: React.FC<PrecognitionProviderProps> = (props) => {
   return (
     <PrecognitionContext.Provider
       value={{

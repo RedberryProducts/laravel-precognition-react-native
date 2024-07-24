@@ -1,33 +1,22 @@
 import React from 'react';
-import {PrecognitionContext} from '../PrecognitionContext';
-
-type RequestMethodTypes = 'PUT' | 'PATCH' | 'POST' | 'DELETE' | 'GET';
-
-type ResponseReturType = {
-  message: any;
-  data: any;
-};
-
-export type Precognition = {
-  precognition: boolean;
-  validate_name: string | null;
-};
-type Props = {
-  endpoint: string;
-  method: RequestMethodTypes;
-  config?: {};
-};
+import { PrecognitionContext } from '../PrecognitionContext';
+import {
+  Precognition,
+  PrecognitionReturnType,
+  Props,
+  ResponseReturType,
+} from '../types';
 
 const usePrecognition = <T>(props: Props): PrecognitionReturnType<T> => {
-  const {config} = React.useContext(PrecognitionContext);
+  const { config } = React.useContext(PrecognitionContext);
   const [errors, setErrors] = React.useState<T | null>(null);
   const [disabled, setDisabled] = React.useState<boolean>(true);
   const [touched, setTouched] = React.useState<T | null>(null);
   const [loading, setLoading] = React.useState<boolean>(false);
 
-  const setResponseErrors = (error: {[key: string]: string[]}): void => {
-    let er: {[key: string]: any} = {};
-    Object.keys(error).forEach(item => {
+  const setResponseErrors = (error: { [key: string]: string[] }): void => {
+    let er: { [key: string]: any } = {};
+    Object.keys(error).forEach((item) => {
       er = {
         ...er,
         [item]: error[item as string]?.[0] as string,
@@ -78,13 +67,13 @@ const usePrecognition = <T>(props: Props): PrecognitionReturnType<T> => {
       if (data?.errors) {
         setDisabled(true);
         if (fieldName) {
-          setTouched(prev => ({
+          setTouched((prev) => ({
             ...(prev as T),
             [fieldName]: true,
           }));
         } else {
           let err = {};
-          Object.keys(data?.errors).forEach(item => {
+          Object.keys(data?.errors).forEach((item) => {
             err = {
               ...err,
               [item]: true,
@@ -148,13 +137,13 @@ const usePrecognition = <T>(props: Props): PrecognitionReturnType<T> => {
       setResponseErrors(error?.response?.data?.errors);
       setDisabled(true);
       if (fieldName) {
-        setTouched(prev => ({
+        setTouched((prev) => ({
           ...(prev as T),
           [fieldName]: true,
         }));
       } else {
         let err = {};
-        Object.keys(error?.response?.data?.errors).forEach(item => {
+        Object.keys(error?.response?.data?.errors).forEach((item) => {
           err = {
             ...err,
             [item]: true,
@@ -177,20 +166,6 @@ const usePrecognition = <T>(props: Props): PrecognitionReturnType<T> => {
     setDisabled,
     loading,
   };
-};
-
-type PrecognitionReturnType<T> = {
-  submit: (values: T) => Promise<ResponseReturType | undefined>;
-  validateValues: (
-    vals: Partial<Record<keyof T, any>>,
-    fieldName?: string,
-  ) => Promise<void>;
-  errors: T | null;
-  setErrors: React.Dispatch<React.SetStateAction<T | null>>;
-  setDisabled: React.Dispatch<React.SetStateAction<boolean>>;
-  disabled: boolean;
-  touched: T | null;
-  loading: boolean;
 };
 
 export default usePrecognition;
