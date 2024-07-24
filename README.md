@@ -6,8 +6,16 @@ Laravel Precognition React Native allows you to anticipate the outcome of a futu
 
 ### Install
 
+#### npm
+
 ```bash
 npm i @rayredberry/laravel-precognition-react-native
+```
+
+#### yarn
+
+```bash
+yarn add @rayredberry/laravel-precognition-react-native
 ```
 
 ### Wrapper
