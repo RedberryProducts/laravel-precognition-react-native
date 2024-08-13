@@ -1,14 +1,13 @@
 import { defineConfig } from 'tsup';
 
-export default defineConfig({
+export default defineConfig((option) => ({
   format: ['cjs', 'esm'],
-  entry: [
-    './src/hooks/usePrecognition.ts',
-    './src/PrecognitionContext/index.tsx',
-    './src/types/index.ts',
-  ],
+  entry: ['./src/index.ts'],
   dts: true,
   shims: true,
   skipNodeModulesBundle: true,
   clean: true,
-});
+  jsxFactory: option.jsxFactory,
+  jsxFragment: option.jsxFragment,
+  external: ['react', 'react-dom'],
+}));

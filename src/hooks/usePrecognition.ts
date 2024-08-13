@@ -1,7 +1,7 @@
 import React from 'react';
 import { PrecognitionContext } from '../PrecognitionContext';
 import {
-  Precognition,
+  PrecognitionType,
   PrecognitionReturnType,
   Props,
   ResponseReturType,
@@ -25,7 +25,7 @@ const usePrecognition = <T>(props: Props): PrecognitionReturnType<T> => {
     setErrors(er as T);
   };
 
-  const client = async (precognitionConfig: Precognition, body: T) => {
+  const client = async (precognitionConfig: PrecognitionType, body: T) => {
     setLoading(true);
     try {
       const res = await fetch(`${config.url}${props.endpoint}`, {
@@ -57,7 +57,7 @@ const usePrecognition = <T>(props: Props): PrecognitionReturnType<T> => {
   };
 
   const sendRequest = async (
-    precognitionConfig: Precognition,
+    precognitionConfig: PrecognitionType,
     body: T,
     fieldName?: string,
   ): Promise<ResponseReturType | undefined> => {
@@ -113,7 +113,7 @@ const usePrecognition = <T>(props: Props): PrecognitionReturnType<T> => {
   };
 
   const validate = async (
-    precognitionConfig: Precognition,
+    precognitionConfig: PrecognitionType,
     values: any,
     fieldName?: string,
   ) => {

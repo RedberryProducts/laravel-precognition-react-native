@@ -15,5 +15,4 @@
   },
   "include": ["src"],
   "exclude": ["node_modules"]
-  // "extends": "@react-native/typescript-config/tsconfig.json"
 }

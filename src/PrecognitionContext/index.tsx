@@ -5,27 +5,28 @@ import {
   PrecognitionProviderProps,
 } from '../types';
 
-let data: PrecognitionConfig | null = null;
+let data: PrecognitionConfig = {
+  url: null,
+};
 
-const init = (params: PrecognitionConfig) => (data = params);
+const init = (params: PrecognitionConfig) => {
+  data = params;
+};
 
 export const Precognition = {
   init,
 };
 
 export const PrecognitionContext = React.createContext<PrecognitionConfigType>({
-  config: {
-    url: null,
-  },
+  config: data,
 });
 
-const PrecognitionWrapper: React.FC<PrecognitionProviderProps> = (props) => {
+const PrecognitionWrapper: React.FC<PrecognitionProviderProps> = ({
+  children,
+}): JSX.Element => {
   return (
-    <PrecognitionContext.Provider
-      value={{
-        config: data as PrecognitionConfig,
-      }}>
-      {props.children}
+    <PrecognitionContext.Provider value={{ config: data }}>
+      {children}
     </PrecognitionContext.Provider>
   );
 };

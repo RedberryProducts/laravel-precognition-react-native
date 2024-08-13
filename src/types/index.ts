@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type PrecognitionProviderProps = {
   children: React.ReactNode;
 };
@@ -18,7 +20,7 @@ export type ResponseReturType = {
   data: any;
 };
 
-export type Precognition = {
+export type PrecognitionType = {
   precognition: boolean;
   validate_name: string | null;
 };
@@ -42,3 +44,9 @@ export type PrecognitionReturnType<T> = {
   touched: T | null;
   loading: boolean;
 };
+
+export declare const usePrecognition: <T>(
+  props: Props,
+) => PrecognitionReturnType<T>;
+
+export declare const PrecognitionWrapper: React.FC<PrecognitionProviderProps>;
